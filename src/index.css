@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fancy-font {
+  font-family: 'League Script', cursive;
+}
+
+.regular-font {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.dark-image {
+  filter: brightness(70%);
+}
