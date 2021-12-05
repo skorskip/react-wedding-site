@@ -1,0 +1,22 @@
+.event-details-content-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.event-details-image-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+}
+
+.event-detail-text-large {
+    font-size: 4em;
+    padding: 10px;
+    font-weight: bolder;
+} 
