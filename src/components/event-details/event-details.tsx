@@ -16,6 +16,7 @@ export const EventDetails = () => {
                 button={info.button}
                 subImage={info.subImage}
                 titleImage={info.titleImage}
+                mobileTitleImage={info.mobileTitleImage}
                 content={info.content}
                 stagger= {i}
             />

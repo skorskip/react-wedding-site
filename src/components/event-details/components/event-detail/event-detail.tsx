@@ -1,7 +1,7 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { Card } from "../../../card/card";
-import Rellax from 'rellax';
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Picture } from "../../../picture/picture";
 
 type Props = {
     title: string,
@@ -10,27 +10,42 @@ type Props = {
     button: string | null,
     content: string,
     titleImage: string,
+    mobileTitleImage: string,
     subImage: string,
     stagger: number
 }
 
-export const EventDetail = ({title, subtitle, icon, button, content, titleImage, subImage, stagger} : Props) => {
+export const EventDetail = ({title, subtitle, icon, button, content, titleImage, mobileTitleImage, subImage, stagger} : Props) => {
     
-    const [cardHeight, setCardHeight] = useState(0);
+    const [offset, setOffset] = useState(0);
+    const [width, setWidth] = useState(window.innerWidth);
+    const mobileWidth = 550;
 
     const getCardHeight = () => {
         const height = document.getElementById(subtitle + '-card')?.offsetHeight;
-        if(height) setCardHeight(height * (3/4));
+        if(height) {
+            let magic = width > mobileWidth ? (1/2) : (1/4)
+            setOffset((height * magic) * stagger);
+        }
     }
-    
+
     useEffect(() => {
-        var rellax = new Rellax('.rellax *');
+        const updateWidth = () => {
+            setWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", updateWidth);
+        return () => window.removeEventListener("resize", updateWidth);
     }, []);
 
     return (
         <>
             <div className="rellax event-details-row" data-rellax-speed="2">
-                <img src={titleImage} style={{paddingBottom:(cardHeight * stagger)}} className="dark-image" onLoad={getCardHeight}/>
+                <Picture 
+                    picture={(width > mobileWidth) ? titleImage : mobileTitleImage}
+                    style={{paddingBottom:(offset)}}
+                    loadFunc={getCardHeight}
+                    customClass="dark-image"
+                />
             </div>
             <div className="event-details-image-title">
                 <div className="event-detail-text-large fancy-font">{title}</div>

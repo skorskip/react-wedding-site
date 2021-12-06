@@ -13,6 +13,26 @@
 
 }
 
+.card-top-image-style {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;  
+    object-fit: cover;  
+}
+
 .card-content-text {
     text-align: left;
+}
+
+.card-style {
+    width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 550px) {
+    .card-style {
+        width: 60%;
+        flex-direction: row;
+    }
 }

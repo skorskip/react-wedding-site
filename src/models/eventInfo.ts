@@ -7,6 +7,7 @@ export class EventInfo {
     button: string | null;
     subImage: string;
     titleImage: string;
+    mobileTitleImage: string;
     content: string;
 
     constructor(
@@ -16,6 +17,7 @@ export class EventInfo {
         button: string,
         subImage: string,
         titleImage: string,
+        mobileTitleImage: string,
         content: string) {
 
         this.title = title;
@@ -24,6 +26,7 @@ export class EventInfo {
         this.button = button;
         this.subImage = subImage;
         this.titleImage = titleImage;
+        this.mobileTitleImage = mobileTitleImage;
         this.content = content;
     }
 }

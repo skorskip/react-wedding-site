@@ -21,7 +21,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -32,8 +32,7 @@
 }
 
 .header-text-large {
-    font-size: 4em;
-    padding: 10px;
+    font-size: 3em;
     color: white;
     font-weight: bolder;
 }
@@ -41,4 +40,20 @@
 .header-date-text {
     color: black;
     padding: 50px;
+}
+
+@media only screen and (min-width: 550px) {
+    .header-image-title {
+        flex-direction: row;
+    }
+
+    .header-text-large {
+        padding: 10px;
+    }
+
+    .header-text-large {
+        font-size: 4em;
+        color: white;
+        font-weight: bolder;
+    }
 }

@@ -1,18 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { PHOTO_ENUM } from '../../data/photos';
+import { Picture } from '../picture/picture';
 import "./header.css"
-import Rellax from 'rellax';
 
 export const Header = () => {
     
-    const [imageHeight, setImageHeight] = useState(0);
+    const [offset, setOffset] = useState("");
+    const [width, setWidth] = useState(window.innerWidth);
+    const headerImage = PHOTO_ENUM.AUSTIN_PANO;
+    const mobileHeaderImage = PHOTO_ENUM.AUSTIN_SQUARE;
+    const mobileWidth = 550;
 
     const handleImageLoad = (event: any) => {
+
         const height = document.getElementById("imageContainer")?.offsetHeight
-        if(height) setImageHeight(height);
+        if(height) {
+            if(width > mobileWidth){
+                setOffset((height / 2) + "px")
+            } else {
+                setOffset("50%");
+            }
+        }
     }
 
     useEffect(() => {
-        var rellax = new Rellax('.rellax *');
+        const updateWidth = () => {
+            setWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", updateWidth);
+        return () => window.removeEventListener("resize", updateWidth);
     }, []);
 
     return (
@@ -21,12 +37,13 @@ export const Header = () => {
                 <div className="header-date-text regular-font">come party!</div>
             </div>
             <div className="header-row">
-                {/* <div style={{display:"flex", flexDirection:"column"}}>
-                    <img src="/assets/images/austin_pano_left.png" />
-                    <img src="/assets/images/austion_pano_right.png" />
-                </div> */}
-                <img  src="/assets/images/austion_pano.png" className="dark-image"/>
-                <div className="header-image-title" style={{top:imageHeight/2 + "px"}}>
+                <Picture 
+                    picture={(width > mobileWidth) ? headerImage : mobileHeaderImage}
+                    customClass="dark-image"
+                    style={null}
+                    loadFunc={() => null}
+                />
+                <div className="header-image-title" style={{top:offset}}>
                     <div className="header-text-large fancy-font">Paul</div>
                     <div className="header-text-large fancy-font">&</div>
                     <div className="header-text-large fancy-font">Caroline</div>
