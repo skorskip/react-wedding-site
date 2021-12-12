@@ -49,6 +49,7 @@ export const Card = ({title, content, icon, button, imagePath}: Props) => {
     const imageCard = (imagePath) && (
         <figure className={(width > mobileWidth) ? cardClass : cardClassMobile}>
             <Picture 
+                id={title + '-subheader-picture'}
                 picture={imagePath}
                 customClass={(width > mobileWidth) ? "card-side-image-style" : "card-top-image-style"}
                 style={null}

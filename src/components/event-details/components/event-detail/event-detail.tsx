@@ -11,7 +11,7 @@ type Props = {
     content: string,
     titleImage: string,
     mobileTitleImage: string,
-    subImage: string,
+    subImage: string | null,
     stagger: number
 }
 
@@ -22,9 +22,9 @@ export const EventDetail = ({title, subtitle, icon, button, content, titleImage,
     const mobileWidth = 550;
 
     const getCardHeight = () => {
-        const height = document.getElementById(subtitle + '-card')?.offsetHeight;
+        const height = document.getElementById(subtitle + '-header-picture')?.offsetHeight;
         if(height) {
-            let magic = width > mobileWidth ? (1/2) : (1/4)
+            let magic = width > mobileWidth ? (5/12) : (3/16)
             setOffset((height * magic) * stagger);
         }
     }
@@ -40,11 +40,12 @@ export const EventDetail = ({title, subtitle, icon, button, content, titleImage,
     return (
         <>
             <div className="rellax event-details-row" data-rellax-speed="2">
-                <Picture 
+                <Picture
+                    id={subtitle + '-header-picture'} 
                     picture={(width > mobileWidth) ? titleImage : mobileTitleImage}
                     style={{paddingBottom:(offset)}}
                     loadFunc={getCardHeight}
-                    customClass="dark-image"
+                    customClass="dark-image event-detail-title-image"
                 />
             </div>
             <div className="event-details-image-title">
@@ -53,9 +54,9 @@ export const EventDetail = ({title, subtitle, icon, button, content, titleImage,
             <div className="event-details-content-group">
                 <Card
                     title={subtitle}
-                    icon={icon}    
+                    icon={icon}
                     button={button}
-                    imagePath={subImage}                             
+                    imagePath={subImage}
                     content={content}
                 />
             </div>

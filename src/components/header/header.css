@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 200px;
     width: 100%;
 }
@@ -43,6 +43,10 @@
 }
 
 @media only screen and (min-width: 550px) {
+    .header-container {
+        padding-top: 100px;
+    }
+
     .header-image-title {
         flex-direction: row;
     }

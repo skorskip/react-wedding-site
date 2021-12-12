@@ -5,23 +5,24 @@ type Props = {
     picture : string,
     style : any | null,
     customClass : string,
+    id: string | undefined,
     loadFunc : () => void | null
 }
 
-export const Picture = ({picture, style, customClass, loadFunc}:Props) => {
+export const Picture = ({picture, style, customClass, id, loadFunc}:Props) => {
 
     let photo = photos[picture];
     
     return (
-        <picture>
-            <source 
+        <picture >
+            <source
                 srcSet={photo.webp} 
                 type="image/webp" 
                 onLoad={loadFunc} 
                 className={customClass}
                 style={style}
             />
-            <img 
+            <img id={id}
                 src={photo.png} 
                 alt="" 
                 onLoad={loadFunc}

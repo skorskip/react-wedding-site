@@ -38,6 +38,7 @@ export const Header = () => {
             </div>
             <div className="header-row">
                 <Picture 
+                    id={'header-picture'}
                     picture={(width > mobileWidth) ? headerImage : mobileHeaderImage}
                     customClass="dark-image"
                     style={null}

@@ -21,3 +21,13 @@
     font-weight: bolder;
     z-index: 1;
 }
+
+.event-detail-title-image {
+    border-radius: 0.25rem;
+}
+
+@media only screen and (min-width: 550px) {
+    .event-detail-title-image {
+        border-radius: 0rem;
+    }
+}
