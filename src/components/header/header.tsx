@@ -13,7 +13,7 @@ export const Header = () => {
 
     const handleImageLoad = (event: any) => {
 
-        const height = document.getElementById("imageContainer")?.offsetHeight
+        const height = document.getElementById("header-image-container")?.offsetHeight
         if(height) {
             if(width > mobileWidth){
                 setOffset((height / 2) + "px")
@@ -32,7 +32,7 @@ export const Header = () => {
     }, []);
 
     return (
-        <div className="header-container" id="imageContainer" onLoad={handleImageLoad}>
+        <div className="header-container" id="header-image-container" onLoad={handleImageLoad}>
             <div className="rellax header-row" data-rellax-speed="2">
                 <div className="header-date-text regular-font">come party!</div>
             </div>
