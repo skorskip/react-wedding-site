@@ -34,7 +34,7 @@ export const Header = () => {
     return (
         <div className="header-container" id="header-image-container" onLoad={handleImageLoad}>
             <div className="rellax header-row" data-rellax-speed="2">
-                <div className="header-date-text regular-font">come party!</div>
+                <div className="header-date-text regular-font primary-color">come party!</div>
             </div>
             <div className="header-row">
                 <Picture 
@@ -44,14 +44,14 @@ export const Header = () => {
                     style={null}
                     loadFunc={() => null}
                 />
-                <div className="header-image-title" style={{top:offset}}>
+                <div className="header-image-title base-color" style={{top:offset}}>
                     <div className="header-text-large fancy-font">Paul</div>
                     <div className="header-text-large fancy-font">&</div>
                     <div className="header-text-large fancy-font">Caroline</div>
                 </div>
             </div>
             <div className="rellax header-row" data-rellax-speed="2">
-                <div className="header-date-text regular-font">9 - 9 - 2022</div>
+                <div className="header-date-text regular-font primary-color">9 - 9 - 2022</div>
             </div>
         </div>
     )

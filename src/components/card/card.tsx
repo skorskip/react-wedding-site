@@ -9,10 +9,11 @@ type Props = {
     content: string,
     icon: IconDefinition,
     button: string | null,
-    imagePath: string | null
+    imagePath: string | null,
+    buttonLink: string | null
 }
 
-export const Card = ({title, content, icon, button, imagePath}: Props) => {
+export const Card = ({title, content, icon, button, imagePath, buttonLink}: Props) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const mobileWidth = 550;
@@ -20,27 +21,41 @@ export const Card = ({title, content, icon, button, imagePath}: Props) => {
     const cardClassMobile = "image is-5by4 card-side-image";
 
     useEffect(() => {
+
+        let contentTag = document.getElementById(title + '-card-content');
+        
+        if(contentTag && content) {
+            contentTag.innerHTML = content;
+        }
+
         const updateWidth = () => {
             setWidth(window.innerWidth);
         };
         window.addEventListener("resize", updateWidth);
         return () => window.removeEventListener("resize", updateWidth);
+
     }, []);
+
+    const buttonClick = () => {
+        if(buttonLink){
+            window.location.href = buttonLink;
+        }
+    }
 
     const titleCard = (
         <div className="title">
             <span className="icon-text" style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
-                <span className="icon">
+                <span className="icon primary-color">
                     <FontAwesomeIcon icon={icon}/>
                 </span>
-                <span className="card-title-text regular-font">{title}</span>
+                <span className="card-title-text regular-font primary-color">{title}</span>
             </span>
         </div>
     )
 
     const buttonCard = (button) && (
         <div style={{display:"flex",justifyContent:"flex-end",flexDirection:"column", alignItems:"center"}}>
-            <button className="button is-primary is-outlined">
+            <button className="button accent-color is-outlined" onClick={buttonClick}>
                 {button}
             </button>
         </div>
@@ -63,8 +78,7 @@ export const Card = ({title, content, icon, button, imagePath}: Props) => {
             { imageCard }
             <div className="card-content">
                 { titleCard }
-                <div className="content card-content-text" style={{fontSize:".7em"}}>
-                    {content}
+                <div id={title + '-card-content'} className="content card-content-text primary-color" style={{fontSize:".7em"}}>
                 </div>
                 { buttonCard }
             </div>
