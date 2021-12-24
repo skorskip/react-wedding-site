@@ -32,6 +32,13 @@ export const Home = () => {
         }
     }
 
+    const keyPressInput = (event: any) => {
+        let keyPressed = event.keyCode || event.which;
+        if (keyPressed === 13) {
+            checkPassword();
+        }
+    }
+
     const main = (allow) && (
         <div onLoad={loadRellax}>
             <Navbar />
@@ -60,7 +67,8 @@ export const Home = () => {
                 className={wrong ? "input is-large is-danger" : "input is-large"} 
                 type="text" 
                 placeholder="secret" 
-                onChange={handleChange}>
+                onChange={handleChange}
+                onKeyPress={keyPressInput}>
             </input>
             <button 
                 className="button accent-color is-outlined login-button" 

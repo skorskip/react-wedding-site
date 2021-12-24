@@ -12,7 +12,9 @@ type Props = {
     titleImage: string,
     mobileTitleImage: string,
     subImage: string | null,
-    buttonLink: string | null
+    buttonLink: string | null,
+    viewMobile: boolean,
+    viewDesktop: boolean
 }
 
 export const EventDetail = ({
@@ -24,7 +26,9 @@ export const EventDetail = ({
     titleImage, 
     mobileTitleImage, 
     subImage, 
-    buttonLink
+    buttonLink,
+    viewDesktop,
+    viewMobile
 } : Props) => {
 
     const [width, setWidth] = useState(window.innerWidth);
@@ -60,6 +64,14 @@ export const EventDetail = ({
         </div>
     )
 
+    const eventDetails = ((width < mobileWidth && viewMobile) || 
+    (width >= mobileWidth && viewDesktop)) && (
+        <>
+            {titlePicture}
+            {cardDetails}
+        </>
+    )
+
     useEffect(() => {
         const updateWidth = () => {
             setWidth(window.innerWidth);
@@ -70,8 +82,7 @@ export const EventDetail = ({
 
     return (
         <>
-            {titlePicture}
-            {cardDetails}
+            {eventDetails}
         </>
     );
 }

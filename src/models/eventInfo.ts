@@ -10,6 +10,9 @@ export class EventInfo {
     mobileTitleImage: string;
     content: string;
     buttonLink: string | null;
+    viewMobile: boolean;
+    viewDesktop: boolean;
+    
 
     constructor(
         title: string, 
@@ -20,7 +23,9 @@ export class EventInfo {
         titleImage: string,
         mobileTitleImage: string,
         content: string,
-        buttonLink: string) {
+        buttonLink: string,
+        viewMobile: boolean,
+        viewDesktop: boolean) {
 
         this.title = title;
         this.subTitle = subtitle;
@@ -31,5 +36,7 @@ export class EventInfo {
         this.mobileTitleImage = mobileTitleImage;
         this.content = content;
         this.buttonLink = buttonLink;
+        this.viewMobile = viewMobile;
+        this.viewDesktop = viewDesktop;
     }
 }
