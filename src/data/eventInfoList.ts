@@ -62,7 +62,7 @@ export const EventInfoList = [
         mobileTitleImage: PHOTO_ENUM.KYOTO_SQUARE,
         subImage: null,
         button: null,
-        content: "<iframe src=\"https://docs.google.com/forms/d/e/1FAIpQLSfVOVlXUB39aD_WYpJqHIa6eD0ytvJzQX3YYeYloVOomdikbQ/viewform?embedded=true\" width=\"640\" height=\"800\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Loading…</iframe>",
+        content: "<iframe src=\"https://docs.google.com/forms/d/e/1FAIpQLSfVOVlXUB39aD_WYpJqHIa6eD0ytvJzQX3YYeYloVOomdikbQ/viewform?embedded=true\" width=\"640\" height=\"1000\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Loading…</iframe>",
         icon: faCalendarCheck,
         buttonLink: null,
         viewDesktop: true,
