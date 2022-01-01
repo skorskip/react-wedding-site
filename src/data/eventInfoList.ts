@@ -7,7 +7,7 @@ export const EventInfoList = [
         title: "when ...",
         subTitle: "Details",
         titleImage: PHOTO_ENUM.AMSTERDAM_PANO,
-        mobileTitleImage: PHOTO_ENUM.AMSTERDAM_SQUARE,
+        mobileTitleImage: PHOTO_ENUM.PARIS_SQUARE,
         subImage: PHOTO_ENUM.ENGAGEMENT_1,
         button: null,
         content: "<ul>The wedding ceremony will begin at 5:00pm on 9/9/2022 at the Point at Norwalk Cove.</ul><ul>Followed by cocktail hour and reception all at the same location.</ul>",

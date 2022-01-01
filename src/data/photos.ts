@@ -14,6 +14,7 @@ import engagement1 from "../assets/images/png/engagement_1.jpg";
 import engagement2 from "../assets/images/png/engagement_2.jpg";
 import engagement3 from "../assets/images/png/engagement_3.jpg";
 import engagement4 from "../assets/images/png/engagement_4.jpg";
+import parisSquare from "../assets/images/png/paris_square.jpg";
 
 import austinPanoWebp from "../assets/images/webp/austin_pano.webp";
 import amsterdamPanoWebp from "../assets/images/webp/amsterdam_pano.webp";
@@ -31,6 +32,7 @@ import engagement1Webp from "../assets/images/webp/engagement_1.webp";
 import engagement2Webp from "../assets/images/webp/engagement_2.webp";
 import engagement3Webp from "../assets/images/webp/engagement_3.webp";
 import engagement4Webp from "../assets/images/webp/engagement_4.webp";
+import parisSquareWebp from "../assets/images/webp/paris_square.webp";
 
 export const PHOTO_ENUM = {
     AUSTIN_PANO : "austinPano",
@@ -48,7 +50,8 @@ export const PHOTO_ENUM = {
     ENGAGEMENT_1 : "engagement1",
     ENGAGEMENT_2 : "engagement2",
     ENGAGEMENT_3 : "engagement3",
-    ENGAGEMENT_4 : "engagement4"
+    ENGAGEMENT_4 : "engagement4",
+    PARIS_SQUARE : "parisSquare"
 }
 export const photos = {
     austinPano : {
@@ -114,5 +117,9 @@ export const photos = {
     engagement4 : {
         png : engagement4,
         webp : engagement4Webp
+    },
+    parisSquare : {
+        png : parisSquare,
+        webp: parisSquareWebp
     }
 } as any
