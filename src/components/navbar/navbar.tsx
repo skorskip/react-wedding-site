@@ -71,34 +71,35 @@ export const Navbar = () => {
                 </span>
                 hotel
             </div>
-            <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("rsvp")}>
+            {/* <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("rsvp")}>
                 <span className="icon is-large">
                     <FontAwesomeIcon icon={faCalendarCheck}/>
                 </span>
                 rsvp
-            </div>
+            </div> */}
         </nav>
     )
 
     const desktopNav = (width >= mobileWidth) &&(
         <div className="nav-bar-container primary-color base-background-color">
+            <div>
+                <span className="icon navbar-icon" onClick={() => navItemSelected("top")}>
+                    <img src={logo}/>
+                </span>
+            </div>
             <div className={getSelectedClass("details")} onClick={() => navItemSelected("details")}>
                 details
             </div>
             <div className={getSelectedClass("venue")} onClick={() => navItemSelected("venue")}>
                 venue
             </div>
-            <div>
-                <span className="icon navbar-icon" onClick={() => navItemSelected("top")}>
-                    <img src={logo}/>
-                </span>
-            </div>
+
             <div className={getSelectedClass("hotel")} onClick={() => navItemSelected("hotel")}>
                 hotel
             </div>
-            <div className={getSelectedClass("rsvp")} onClick={() => navItemSelected("rsvp")}>
+            {/* <div className={getSelectedClass("rsvp")} onClick={() => navItemSelected("rsvp")}>
                 rsvp
-            </div>
+            </div> */}
         </div>
     );
 

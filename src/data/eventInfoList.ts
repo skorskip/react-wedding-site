@@ -42,30 +42,30 @@ export const EventInfoList = [
         viewDesktop: true,
         viewMobile: true
     },
-    {
-        title: "who ...",
-        subTitle: "RSVP",
-        titleImage: PHOTO_ENUM.BRUGE_PANO,
-        mobileTitleImage: PHOTO_ENUM.KYOTO_SQUARE,
-        subImage: PHOTO_ENUM.ENGAGEMENT_4,
-        button: "Go to form",
-        content: "<ul>Let us know if you are joining us!</ul><ul>Fill the form out by going to the link below.</ul>",
-        icon: faCalendarCheck,
-        buttonLink: "https://forms.gle/eejVWqnr153KGWVv5",
-        viewMobile: true,
-        viewDesktop: false
-    },
-    {
-        title: "who ...",
-        subTitle: "RSVP",
-        titleImage: PHOTO_ENUM.BRUGE_PANO,
-        mobileTitleImage: PHOTO_ENUM.KYOTO_SQUARE,
-        subImage: null,
-        button: null,
-        content: "<iframe src=\"https://docs.google.com/forms/d/e/1FAIpQLSfVOVlXUB39aD_WYpJqHIa6eD0ytvJzQX3YYeYloVOomdikbQ/viewform?embedded=true\" width=\"640\" height=\"1000\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Loading…</iframe>",
-        icon: faCalendarCheck,
-        buttonLink: null,
-        viewDesktop: true,
-        viewMobile: false
-    }
+    // {
+    //     title: "who ...",
+    //     subTitle: "RSVP",
+    //     titleImage: PHOTO_ENUM.BRUGE_PANO,
+    //     mobileTitleImage: PHOTO_ENUM.KYOTO_SQUARE,
+    //     subImage: PHOTO_ENUM.ENGAGEMENT_4,
+    //     button: "Go to form",
+    //     content: "<ul>Let us know if you are joining us!</ul><ul>Fill the form out by going to the link below.</ul>",
+    //     icon: faCalendarCheck,
+    //     buttonLink: "https://forms.gle/eejVWqnr153KGWVv5",
+    //     viewMobile: true,
+    //     viewDesktop: false
+    // },
+    // {
+    //     title: "who ...",
+    //     subTitle: "RSVP",
+    //     titleImage: PHOTO_ENUM.BRUGE_PANO,
+    //     mobileTitleImage: PHOTO_ENUM.KYOTO_SQUARE,
+    //     subImage: null,
+    //     button: null,
+    //     content: "<iframe src=\"https://docs.google.com/forms/d/e/1FAIpQLSfVOVlXUB39aD_WYpJqHIa6eD0ytvJzQX3YYeYloVOomdikbQ/viewform?embedded=true\" width=\"640\" height=\"1000\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Loading…</iframe>",
+    //     icon: faCalendarCheck,
+    //     buttonLink: null,
+    //     viewDesktop: true,
+    //     viewMobile: false
+    // }
 ] as EventInfo[]
