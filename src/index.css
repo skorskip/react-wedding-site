@@ -13,7 +13,7 @@ code {
 }
 
 .fancy-font {
-  font-family: 'League Script', cursive;
+  font-family: 'Pacifico', cursive;
 }
 
 .regular-font {
@@ -22,4 +22,40 @@ code {
 
 .dark-image {
   filter: brightness(70%);
+}
+
+.base-color {
+  color: white !important;
+  border-color: white !important;
+}
+
+.base-background-color {
+  background: white !important;
+}
+
+.primary-color {
+  color: #6A766C !important;
+  border-color: #6A766C !important;
+}
+
+.primary-background-color {
+  background: #6A766C !important;
+}
+
+.accent-color {
+  color: #C1695E !important;
+  border-color: #C1695E !important;
+}
+
+.accent-background-color {
+  background: #C1695E !important
+}
+
+.tiertary-color {
+  color: #E6C9C4 !important;
+  border-color: #E6C9C4 !important;
+}
+
+.tiertary-background-color {
+  background: #E6C9C4 !important;
 }

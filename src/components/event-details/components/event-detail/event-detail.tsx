@@ -12,22 +12,65 @@ type Props = {
     titleImage: string,
     mobileTitleImage: string,
     subImage: string | null,
-    stagger: number
+    buttonLink: string | null,
+    viewMobile: boolean,
+    viewDesktop: boolean
 }
 
-export const EventDetail = ({title, subtitle, icon, button, content, titleImage, mobileTitleImage, subImage, stagger} : Props) => {
-    
-    const [offset, setOffset] = useState(0);
+export const EventDetail = ({
+    title, 
+    subtitle, 
+    icon, 
+    button, 
+    content, 
+    titleImage, 
+    mobileTitleImage, 
+    subImage, 
+    buttonLink,
+    viewDesktop,
+    viewMobile
+} : Props) => {
+
     const [width, setWidth] = useState(window.innerWidth);
     const mobileWidth = 550;
 
-    const getCardHeight = () => {
-        const height = document.getElementById(subtitle + '-header-picture')?.offsetHeight;
-        if(height) {
-            let magic = width > mobileWidth ? (5/12) : (3/16)
-            setOffset((height * magic) * stagger);
-        }
-    }
+    const titlePicture = (
+        <div className="event-details-row">
+            <Picture
+                id={subtitle + '-header-picture'} 
+                picture={(width > mobileWidth) ? titleImage : mobileTitleImage}
+                style={null}
+                loadFunc={() => null}
+                customClass="dark-image event-detail-title-image"
+            />
+        </div>
+    );
+
+    const cardDetails = (
+        <div className="event-details-floating">
+            <div className="event-details-image-title">
+                <div className="event-detail-text-large fancy-font">{title}</div>
+            </div>
+            <div className="event-details-content-group">
+                <Card
+                    title={subtitle}
+                    icon={icon}
+                    button={button}
+                    imagePath={subImage}
+                    content={content}
+                    buttonLink={buttonLink}
+                />
+            </div>
+        </div>
+    )
+
+    const eventDetails = ((width < mobileWidth && viewMobile) || 
+    (width >= mobileWidth && viewDesktop)) && (
+        <>
+            {titlePicture}
+            {cardDetails}
+        </>
+    )
 
     useEffect(() => {
         const updateWidth = () => {
@@ -39,27 +82,7 @@ export const EventDetail = ({title, subtitle, icon, button, content, titleImage,
 
     return (
         <>
-            <div className="rellax event-details-row" data-rellax-speed="2">
-                <Picture
-                    id={subtitle + '-header-picture'} 
-                    picture={(width > mobileWidth) ? titleImage : mobileTitleImage}
-                    style={{paddingBottom:(offset)}}
-                    loadFunc={getCardHeight}
-                    customClass="dark-image event-detail-title-image"
-                />
-            </div>
-            <div className="event-details-image-title">
-                <div className="event-detail-text-large fancy-font">{title}</div>
-            </div>
-            <div className="event-details-content-group">
-                <Card
-                    title={subtitle}
-                    icon={icon}
-                    button={button}
-                    imagePath={subImage}
-                    content={content}
-                />
-            </div>
+            {eventDetails}
         </>
     );
 }

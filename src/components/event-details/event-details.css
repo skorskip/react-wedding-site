@@ -6,6 +6,13 @@
     width: 100%;
 }
 
+.event-details-floating {
+    position: absolute;
+    z-index: 1;
+    margin-top: -750px;
+    width: 100%;
+}
+
 .event-details-image-title {
     display: flex;
     flex-direction: row;
@@ -18,16 +25,22 @@
 .event-detail-text-large {
     font-size: 4em;
     padding: 10px;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     z-index: 1;
 }
 
 .event-detail-title-image {
     border-radius: 0.25rem;
+    padding-bottom: 400px;
 }
 
 @media only screen and (min-width: 550px) {
     .event-detail-title-image {
         border-radius: 0rem;
+        padding-bottom: 550px;
+    }
+
+    .event-details-floating {
+        margin-top: -725px;
     }
 }

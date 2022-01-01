@@ -18,7 +18,9 @@ export const EventDetails = () => {
                 titleImage={info.titleImage}
                 mobileTitleImage={info.mobileTitleImage}
                 content={info.content}
-                stagger= {i}
+                buttonLink={info.buttonLink}
+                viewDesktop={info.viewDesktop}
+                viewMobile={info.viewMobile}
             />
         )
     })
