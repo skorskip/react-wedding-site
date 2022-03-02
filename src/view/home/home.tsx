@@ -24,8 +24,10 @@ export const Home = () => {
     }
 
     const checkPassword = () => {
-        if(sha256(input) === secret){
-            localStorage.setItem("secret", input);
+        const response = input.toLocaleLowerCase();
+
+        if(sha256(response) === secret){
+            localStorage.setItem("secret", response);
             window.location.reload();
         } else {
             setWrong(true);
@@ -57,6 +59,10 @@ export const Home = () => {
         </div>
     );
 
+    const supportMessage = (wrong) && (
+        <span className="bubble-subcontent">Having problems? Send an emil to <a href="mailto:wedding@skorski.org">wedding@skorski.org</a></span>
+    )
+
     const login = (!allow) && (
         <div className="login-container">
             {warnBubble}
@@ -70,11 +76,16 @@ export const Home = () => {
                 onChange={handleChange}
                 onKeyPress={keyPressInput}>
             </input>
-            <button 
-                className="button accent-color is-outlined login-button" 
-                onClick={checkPassword}>
-                    Login
-            </button>
+
+            <div className="login-button">
+                <button 
+                    className="button accent-color is-outlined" 
+                    onClick={checkPassword}>
+                        Login
+                </button>
+            </div>
+
+                {supportMessage}
         </div>
     );
 
