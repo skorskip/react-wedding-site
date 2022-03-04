@@ -1,11 +1,26 @@
 .login-container {
     position: fixed;
-    top: 250px;
+    top: 60px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+}
+
+.login-title-welcome {
+    font-weight: bold;
+    font-size: larger;
 }
 
 .login-button {
     margin: 10px;
+    width: auto;
 }
 
 .login-logo {
@@ -13,13 +28,14 @@
     width: 4em !important;
     position: fixed;
     right: calc(50% - 2em);
-    margin-top: -60px;
+    margin-top: 96px;
     z-index: 2;
 }
 
 .bubble-container {
     position: fixed;
-    margin-top: -290px;
+    margin-top: -310px;
+    margin-left: 55px;
 }
 
 .bubble-subcontent {
@@ -55,6 +71,6 @@
 
 @media only screen and (min-width: 550px) {
     .login-logo {
-        margin-top: -85px;
+        margin-top: 150px;
     }
 }

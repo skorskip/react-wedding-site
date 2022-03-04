@@ -23,7 +23,7 @@ export const EventInfoList = [
         mobileTitleImage: PHOTO_ENUM.GLENN_ARBOR_SQUARE,
         subImage: PHOTO_ENUM.ENGAGEMENT_2,
         button: "View map",
-        content: "<ul>The wedding will hosted at the The Point in Norwalk, CT.</ul><ul>This is a tented, outdoor venue right on the water.</ul>",
+        content: "<ul>The wedding will be hosted at the The Point in Norwalk, CT.</ul><ul>This is a tented, outdoor venue right on the water.</ul>",
         icon: faGlassCheers,
         buttonLink: "https://www.google.com/maps/@41.0837121,-73.3984655,3a,90y,316.55h,93.76t/data=!3m10!1e1!3m8!1sAF1QipMm8bF8l23W_NK4q2xQuy_3ebNepO83_qdfWNNi!2e10!3e12!7i8192!8i4096!9m2!1b1!2i38",
         viewMobile: true,

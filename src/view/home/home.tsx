@@ -24,8 +24,10 @@ export const Home = () => {
     }
 
     const checkPassword = () => {
-        if(sha256(input) === secret){
-            localStorage.setItem("secret", input);
+        const response = input.toLocaleLowerCase();
+
+        if(sha256(response) === secret){
+            localStorage.setItem("secret", response);
             window.location.reload();
         } else {
             setWrong(true);
@@ -57,24 +59,45 @@ export const Home = () => {
         </div>
     );
 
+    const supportMessage = (wrong) && (
+        <span className="bubble-subcontent">Having problems? Send an emil to <a href="mailto:wedding@skorski.org">wedding@skorski.org</a></span>
+    )
+
+    const loginTitle = (
+        <div className="login-title regular-font">
+            <div className="login-title-welcome">
+                Welcome!
+            </div>
+            <div>
+                Paul and Caroline's Wedding
+            </div>
+        </div>
+    )
+
     const login = (!allow) && (
         <div className="login-container">
+            {loginTitle}
             {warnBubble}
-            <span className="icon login-logo">
+            <div className="icon login-logo">
                 <img src={logo}/>
-            </span>
+            </div>
             <input 
                 className={wrong ? "input is-large is-danger" : "input is-large"} 
                 type="text" 
-                placeholder="secret" 
+                placeholder="enter secret" 
                 onChange={handleChange}
                 onKeyPress={keyPressInput}>
             </input>
-            <button 
-                className="button accent-color is-outlined login-button" 
-                onClick={checkPassword}>
-                    Login
-            </button>
+
+            <div className="login-button">
+                <button 
+                    className="button accent-color is-outlined" 
+                    onClick={checkPassword}>
+                        Login
+                </button>
+            </div>
+
+                {supportMessage}
         </div>
     );
 
