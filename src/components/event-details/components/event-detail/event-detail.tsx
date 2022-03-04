@@ -37,10 +37,8 @@ export const EventDetail = ({
     const titlePicture = (
         <div className="event-details-row">
             <Picture
-                id={subtitle + '-header-picture'} 
+                id={subtitle.toLocaleLowerCase() + '-header-picture'} 
                 picture={(width > mobileWidth) ? titleImage : mobileTitleImage}
-                style={null}
-                loadFunc={() => null}
                 customClass="dark-image event-detail-title-image"
             />
         </div>

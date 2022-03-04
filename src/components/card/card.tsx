@@ -67,8 +67,6 @@ export const Card = ({title, content, icon, button, imagePath, buttonLink}: Prop
                 id={title + '-subheader-picture'}
                 picture={imagePath}
                 customClass={(width > mobileWidth) ? "card-side-image-style" : "card-top-image-style"}
-                style={null}
-                loadFunc={() => null}
             />
         </figure>
     )

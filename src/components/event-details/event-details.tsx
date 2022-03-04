@@ -1,11 +1,15 @@
 import React from "react";
 import './event-details.css';
 import { EventDetail } from "./components/event-detail/event-detail";
-import { EventInfoList } from "../../data/eventInfoList";
+import { EventInfo } from "../../models/eventInfo";
 
-export const EventDetails = () => {
+type Props = {
+    eventInfoList: Array<EventInfo>
+}
 
-    const details = EventInfoList.map((info, i) => {
+export const EventDetails = ({eventInfoList}: Props) => {
+
+    const details = eventInfoList.map((info, i) => {
 
         return (
             <EventDetail 

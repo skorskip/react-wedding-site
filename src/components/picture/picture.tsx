@@ -3,10 +3,10 @@ import { photos } from "../../data/photos";
 
 type Props = {
     picture : string,
-    style : any | null,
-    customClass : string,
+    style? : any | null,
+    customClass? : string,
     id: string | undefined,
-    loadFunc : () => void | null
+    loadFunc? : () => void | null
 }
 
 export const Picture = ({picture, style, customClass, id, loadFunc}:Props) => {

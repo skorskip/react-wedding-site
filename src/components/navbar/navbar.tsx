@@ -26,27 +26,7 @@ export const Navbar = () => {
 
     const navItemSelected = (item: string) => {
         setSelected(item);
-        let element;
-        switch(item) {
-            case "details" : 
-                element = document.getElementById('Details-header-picture');
-                break;
-            case "venue" :
-                element = document.getElementById('Venue-header-picture');
-                break;
-            case "hotel" :
-                element = document.getElementById('Hotel-header-picture');
-                break;
-            case "rsvp"  :
-                element = document.getElementById('RSVP-header-picture');
-                break;
-            case "top" :
-                element = document.getElementById("header-image-container");
-                break;
-            default :
-                element = document.getElementById('Details-header-picture');
-        }
-
+        let element = document.getElementById(`${item}-header-picture`);
         element?.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         setDisplayMobileMenu(false);
     }
@@ -83,7 +63,7 @@ export const Navbar = () => {
     const desktopNav = (width >= mobileWidth) &&(
         <div className="nav-bar-container primary-color base-background-color">
             <div>
-                <span className="icon navbar-icon" onClick={() => navItemSelected("top")}>
+                <span className="icon navbar-icon" onClick={() => navItemSelected("header")}>
                     <img src={logo}/>
                 </span>
             </div>

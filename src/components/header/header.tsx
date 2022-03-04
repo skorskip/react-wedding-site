@@ -41,8 +41,6 @@ export const Header = () => {
                     id={'header-picture'}
                     picture={(width > mobileWidth) ? headerImage : mobileHeaderImage}
                     customClass="dark-image"
-                    style={null}
-                    loadFunc={() => null}
                 />
                 <div className="header-image-title base-color" style={{top:offset}}>
                     <div className="header-text-large fancy-font">Paul</div>
