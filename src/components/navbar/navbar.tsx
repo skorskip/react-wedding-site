@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css"
 import logo from "../../assets/images/logo/puppy.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faConciergeBell, faGlassCheers, faHighlighter, faCalendarCheck, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faConciergeBell, faGlassCheers, faHighlighter, faCalendarCheck, faBars, faTimes, faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 
 export const Navbar = () => {
@@ -51,6 +51,12 @@ export const Navbar = () => {
                 </span>
                 hotel
             </div>
+            <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("faqs")}>
+                <span className="icon is-large">
+                    <FontAwesomeIcon icon={faQuestion}/>
+                </span>
+                faqs
+            </div>
             {/* <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("rsvp")}>
                 <span className="icon is-large">
                     <FontAwesomeIcon icon={faCalendarCheck}/>
@@ -63,7 +69,7 @@ export const Navbar = () => {
     const desktopNav = (width >= mobileWidth) &&(
         <div className="nav-bar-container primary-color base-background-color">
             <div>
-                <span className="icon navbar-icon" onClick={() => navItemSelected("header")}>
+                <span className="icon navbar-icon" onClick={() => navItemSelected("top")}>
                     <img src={logo}/>
                 </span>
             </div>
@@ -76,6 +82,9 @@ export const Navbar = () => {
 
             <div className={getSelectedClass("hotel")} onClick={() => navItemSelected("hotel")}>
                 hotel
+            </div>
+            <div className={getSelectedClass("faqs")} onClick={() => navItemSelected("faqs")}>
+                faqs
             </div>
             {/* <div className={getSelectedClass("rsvp")} onClick={() => navItemSelected("rsvp")}>
                 rsvp
