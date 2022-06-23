@@ -3,17 +3,21 @@ import "./navbar.css"
 import logo from "../../assets/images/logo/puppy.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faConciergeBell, faGlassCheers, faHighlighter, faCalendarCheck, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Link, useLocation } from "react-router-dom";
 
 
 export const Navbar = () => {
 
+    let { search } = useLocation();
+    const query = new URLSearchParams(search);
+    const param = query.get("detail");
     const [width, setWidth] = useState(window.innerWidth);
     const mobileWidth = 550;
-    const [selected, setSelected] = useState("home");
+    const [selected, setSelected] = useState(param);
     const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
 
     const getSelectedClass = (item: string) => {
-        var navClass = "regular-font nav-bar-item";
+        var navClass = "regular-font nav-bar-item primary-color";
         if(item === selected) {
             return navClass + " nav-bar-selected"
         }
@@ -22,94 +26,113 @@ export const Navbar = () => {
 
     const mobileMenuSelected = () => {
         setDisplayMobileMenu(!displayMobileMenu);
-    } 
+    }
 
-    const navItemSelected = (item: string) => {
+    const selectItem = (item: string) => {
         setSelected(item);
-        let element;
-        switch(item) {
-            case "details" : 
-                element = document.getElementById('Details-header-picture');
-                break;
-            case "venue" :
-                element = document.getElementById('Venue-header-picture');
-                break;
-            case "hotel" :
-                element = document.getElementById('Hotel-header-picture');
-                break;
-            case "rsvp"  :
-                element = document.getElementById('RSVP-header-picture');
-                break;
-            case "top" :
-                element = document.getElementById("header-image-container");
-                break;
-            default :
-                element = document.getElementById('Details-header-picture');
-        }
+    }
 
-        element?.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-        setDisplayMobileMenu(false);
+    const selectItemMobile = () => {
+        setDisplayMobileMenu(!displayMobileMenu);
     }
 
     const mobileNavMenu = (displayMobileMenu) && (
         <nav className="panel nav-bar-mobile-menu base-background-color">
-            <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("details")}>
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faHighlighter}/>
-                </span>
-                details
-            </div>
-            <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("venue")}>
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faGlassCheers}/>
-                </span>
-                venue
-            </div>
-            <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("hotel")}>
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faConciergeBell}/>
-                </span>
-                hotel
-            </div>
-            {/* <div className="panel-block nav-bar-mobile-menu-item primary-color" onClick={() => navItemSelected("rsvp")}>
+            <Link 
+                className="panel-block nav-bar-mobile-menu-item primary-color" 
+                to="/details?detail=rsvp"
+                onClick={() => selectItemMobile()}
+            >
                 <span className="icon is-large">
                     <FontAwesomeIcon icon={faCalendarCheck}/>
                 </span>
                 rsvp
-            </div> */}
+            </Link>
+            <Link 
+                className="panel-block nav-bar-mobile-menu-item primary-color" 
+                to="/details?detail=schedule"
+                onClick={() => selectItemMobile()}
+            >
+                <span className="icon is-large">
+                    <FontAwesomeIcon icon={faHighlighter}/>
+                </span>
+                schedule
+            </Link>
+            <Link   
+                className="panel-block nav-bar-mobile-menu-item primary-color" 
+                to="/details?detail=venue"
+                onClick={() => selectItemMobile()}
+            >
+                <span className="icon is-large">
+                    <FontAwesomeIcon icon={faGlassCheers}/>
+                </span>
+                venue
+            </Link>
+            <Link 
+                className="panel-block nav-bar-mobile-menu-item primary-color" 
+                to="/details?detail=hotel"
+                onClick={() => selectItemMobile()}
+            >
+                <span className="icon is-large">
+                    <FontAwesomeIcon icon={faConciergeBell}/>
+                </span>
+                hotel
+            </Link>
+            <Link 
+                className="panel-block nav-bar-mobile-menu-item primary-color" 
+                to="/details?detail=registry"
+                onClick={() => selectItemMobile()}
+            >
+                <span className="icon is-large">
+                    <FontAwesomeIcon icon={faConciergeBell}/>
+                </span>
+                registry
+            </Link>
         </nav>
     )
 
     const desktopNav = (width >= mobileWidth) &&(
         <div className="nav-bar-container primary-color base-background-color">
-            <div>
-                <span className="icon navbar-icon" onClick={() => navItemSelected("top")}>
-                    <img src={logo}/>
+            <Link to="/">
+                <span className="icon navbar-icon">
+                    <img src={logo} alt=""/>
                 </span>
-            </div>
-            <div className={getSelectedClass("details")} onClick={() => navItemSelected("details")}>
-                details
-            </div>
-            <div className={getSelectedClass("venue")} onClick={() => navItemSelected("venue")}>
-                venue
-            </div>
-
-            <div className={getSelectedClass("hotel")} onClick={() => navItemSelected("hotel")}>
-                hotel
-            </div>
-            {/* <div className={getSelectedClass("rsvp")} onClick={() => navItemSelected("rsvp")}>
-                rsvp
-            </div> */}
+            </Link>
+            <Link 
+                to="/details?detail=rsvp" 
+                onClick={() => selectItem('rsvp')}>
+                <div className={getSelectedClass("rsvp")}>rsvp</div>
+            </Link>
+            <Link
+                onClick={() => selectItem('schedule')}
+                to="/details?detail=schedule">
+                <div className={getSelectedClass("schedule")}>schedule</div>
+            </Link>
+            <Link 
+                onClick={() => selectItem('venue')}
+                to="/details?detail=venue">
+                <div className={getSelectedClass("venue")}>venue</div>
+            </Link>
+            <Link
+                onClick={() => selectItem('hotel')}
+                to="/details?detail=hotel">
+                <div className={getSelectedClass("hotel")}>hotel</div>
+            </Link>
+            <Link
+                onClick={() => selectItem('registry')}
+                to="/details?detail=registry">
+                <div className={getSelectedClass("registry")}>registry</div>
+            </Link>
         </div>
     );
 
     const mobileNav = (width < mobileWidth) && (
         <div className="nav-bar-mobile-container base-background-color">
-            <div>
-                <span className="icon navbar-icon-mobile" onClick={() => navItemSelected("top")}>
-                    <img src={logo}/>
+            <Link to="/">
+                <span className="icon navbar-icon-mobile">
+                    <img src={logo} alt=""/>
                 </span>
-            </div>
+            </Link>
             <div>
                 <span className="icon is-large nav-item-mobile primary-color" onClick={mobileMenuSelected}>
                     <FontAwesomeIcon icon={(displayMobileMenu) ? faTimes : faBars}/>

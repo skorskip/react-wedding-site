@@ -1,6 +1,7 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 
 export class EventInfo {
+    id: string;
     title: string;
     subTitle: string;
     icon: IconDefinition;
@@ -15,6 +16,7 @@ export class EventInfo {
     
 
     constructor(
+        id: string,
         title: string, 
         subtitle: string,
         icon: IconDefinition,
@@ -27,6 +29,7 @@ export class EventInfo {
         viewMobile: boolean,
         viewDesktop: boolean) {
 
+        this.id = id;
         this.title = title;
         this.subTitle = subtitle;
         this.icon = icon;

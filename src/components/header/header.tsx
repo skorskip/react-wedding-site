@@ -23,6 +23,8 @@ export const Header = () => {
         }
     }
 
+    const daysUntil = new Date(2022, 8, 9).getTime() - new Date().getTime();
+
     useEffect(() => {
         const updateWidth = () => {
             setWidth(window.innerWidth);
@@ -34,7 +36,7 @@ export const Header = () => {
     return (
         <div className="header-container" id="header-image-container" onLoad={handleImageLoad}>
             <div className="rellax header-row" data-rellax-speed="2">
-                <div className="header-date-text regular-font primary-color">come party!</div>
+                <div className="header-date-text regular-font primary-color">let's party!</div>
             </div>
             <div className="header-row">
                 <Picture 
@@ -45,13 +47,19 @@ export const Header = () => {
                     loadFunc={() => null}
                 />
                 <div className="header-image-title base-color" style={{top:offset}}>
-                    <div className="header-text-large fancy-font">Paul</div>
-                    <div className="header-text-large fancy-font">&</div>
-                    <div className="header-text-large fancy-font">Caroline</div>
+                    <div className="header-title">
+                        <div className="header-text-large fancy-font">Paul</div>
+                        <div className="header-text-large fancy-font">&</div>
+                        <div className="header-text-large fancy-font">Caroline</div>
+                    </div>
+                    <div className="header-subtitle header-text-medium regular-font">9 - 9 - 2022</div>
                 </div>
             </div>
+            <button className="button accent-color is-large rsvp-button"><a href="https://forms.gle/eejVWqnr153KGWVv5" className="accent-color">RSVP Today!</a></button>
             <div className="rellax header-row" data-rellax-speed="2">
-                <div className="header-date-text regular-font primary-color">9 - 9 - 2022</div>
+                <div className="header-date-text regular-font primary-color">
+                    {Math.floor(daysUntil / (60*60*24*1000))} Days until our wedding
+                </div>
             </div>
         </div>
     )

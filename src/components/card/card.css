@@ -21,6 +21,7 @@
 
 .card-content-text {
     text-align: left;
+    font-size: 1em;
 }
 
 .card-style {
@@ -30,9 +31,41 @@
     flex-direction: column;
 }
 
+.card-content {
+    width: 100%;
+}
+
 @media only screen and (min-width: 550px) {
     .card-style {
-        width: 60%;
+        width: 75%;
         flex-direction: row;
     }
+}
+
+/* card content styling */
+.content-table-no-border {
+    border: none;
+}
+
+.content-button-image {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+}
+
+.content-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content-item {
+    margin: 10px;
 }

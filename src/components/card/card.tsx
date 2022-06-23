@@ -5,6 +5,7 @@ import { Picture } from "../picture/picture";
 import "./card.css";
 
 type Props = {
+    id: string,
     title: string,
     content: string,
     icon: IconDefinition,
@@ -13,7 +14,7 @@ type Props = {
     buttonLink: string | null
 }
 
-export const Card = ({title, content, icon, button, imagePath, buttonLink}: Props) => {
+export const Card = ({id, title, content, icon, button, imagePath, buttonLink}: Props) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const mobileWidth = 550;
@@ -22,7 +23,7 @@ export const Card = ({title, content, icon, button, imagePath, buttonLink}: Prop
 
     useEffect(() => {
 
-        let contentTag = document.getElementById(title + '-card-content');
+        let contentTag = document.getElementById(id + '-card-content');
         
         if(contentTag && content) {
             contentTag.innerHTML = content;
@@ -34,7 +35,7 @@ export const Card = ({title, content, icon, button, imagePath, buttonLink}: Prop
         window.addEventListener("resize", updateWidth);
         return () => window.removeEventListener("resize", updateWidth);
 
-    }, []);
+    }, [id, content]);
 
     const buttonClick = () => {
         if(buttonLink){
@@ -64,7 +65,7 @@ export const Card = ({title, content, icon, button, imagePath, buttonLink}: Prop
     const imageCard = (imagePath) && (
         <figure className={(width > mobileWidth) ? cardClass : cardClassMobile}>
             <Picture 
-                id={title + '-subheader-picture'}
+                id={id + '-subheader-picture'}
                 picture={imagePath}
                 customClass={(width > mobileWidth) ? "card-side-image-style" : "card-top-image-style"}
                 style={null}
@@ -74,11 +75,11 @@ export const Card = ({title, content, icon, button, imagePath, buttonLink}: Prop
     )
 
     return (
-        <div id={title + '-card'} className="card card-style">
+        <div id={id + '-card'} className="card card-style">
             { imageCard }
             <div className="card-content">
                 { titleCard }
-                <div id={title + '-card-content'} className="content card-content-text primary-color" style={{fontSize:".7em"}}>
+                <div id={id + '-card-content'} className="content card-content-text primary-color">
                 </div>
                 { buttonCard }
             </div>

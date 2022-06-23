@@ -1,35 +1,14 @@
-import { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { Card } from "../../../card/card";
 import React, { useState, useEffect } from "react";
 import { Picture } from "../../../picture/picture";
+import { EventInfo } from "../../../../models/eventInfo";
+import './event-detail.css'
 
 type Props = {
-    title: string,
-    subtitle: string,
-    icon: IconDefinition,
-    button: string | null,
-    content: string,
-    titleImage: string,
-    mobileTitleImage: string,
-    subImage: string | null,
-    buttonLink: string | null,
-    viewMobile: boolean,
-    viewDesktop: boolean
+    detail: EventInfo
 }
 
-export const EventDetail = ({
-    title, 
-    subtitle, 
-    icon, 
-    button, 
-    content, 
-    titleImage, 
-    mobileTitleImage, 
-    subImage, 
-    buttonLink,
-    viewDesktop,
-    viewMobile
-} : Props) => {
+export const EventDetail = ({detail} : Props) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const mobileWidth = 550;
@@ -37,8 +16,8 @@ export const EventDetail = ({
     const titlePicture = (
         <div className="event-details-row">
             <Picture
-                id={subtitle + '-header-picture'} 
-                picture={(width > mobileWidth) ? titleImage : mobileTitleImage}
+                id={detail?.subTitle + '-header-picture'} 
+                picture={(width > mobileWidth) ? detail?.titleImage : detail?.mobileTitleImage}
                 style={null}
                 loadFunc={() => null}
                 customClass="dark-image event-detail-title-image"
@@ -49,23 +28,24 @@ export const EventDetail = ({
     const cardDetails = (
         <div className="event-details-floating">
             <div className="event-details-image-title">
-                <div className="event-detail-text-large fancy-font">{title}</div>
+                <div className="event-detail-text-large fancy-font">{detail?.title}</div>
             </div>
             <div className="event-details-content-group">
                 <Card
-                    title={subtitle}
-                    icon={icon}
-                    button={button}
-                    imagePath={subImage}
-                    content={content}
-                    buttonLink={buttonLink}
+                    id={detail?.id}
+                    title={detail?.subTitle}
+                    icon={detail?.icon}
+                    button={detail?.button}
+                    imagePath={detail?.subImage}
+                    content={detail?.content}
+                    buttonLink={detail?.buttonLink}
                 />
             </div>
         </div>
     )
 
-    const eventDetails = ((width < mobileWidth && viewMobile) || 
-    (width >= mobileWidth && viewDesktop)) && (
+    const eventDetails = ((width < mobileWidth && detail?.viewMobile) || 
+    (width >= mobileWidth && detail?.viewDesktop)) && (
         <>
             {titlePicture}
             {cardDetails}

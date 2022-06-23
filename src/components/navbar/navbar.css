@@ -23,6 +23,7 @@
 .nav-bar-item {
     padding: 10px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-item-mobile {
@@ -64,6 +65,6 @@
 
 .nav-bar-mobile-menu-header {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 

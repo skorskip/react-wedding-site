@@ -1,0 +1,76 @@
+.login-container {
+    position: fixed;
+    top: 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 150px;
+}
+
+.login-title-welcome {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.login-button {
+    margin: 10px;
+    width: auto;
+}
+
+.login-logo {
+    height: 4em !important;
+    width: 4em !important;
+    position: fixed;
+    right: calc(50% - 2em);
+    margin-top: 145px;
+    z-index: 2;
+}
+
+.bubble-container {
+    position: fixed;
+    margin-top: -310px;
+    margin-left: 55px;
+}
+
+.bubble-subcontent {
+    font-size: 20px;
+}
+
+.bubble {
+    height: 150px;
+    width: 40%;
+    min-width: 321px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 50px;
+    font-size: 53px;
+    text-align: center;
+    box-shadow: 4px 5px 19px 6px grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.pointer {
+    height: 38px;
+    width: 41px;
+    margin: 0 auto;
+    transform: rotate(45deg);
+    border-radius: 0 0 12px 0;
+    margin-top: -25px;
+    position: relative;
+    left: calc(0.5vw - 5px);
+    background: white;
+}
+
+@media only screen and (min-width: 550px) {
+    .login-logo {
+        margin-top: 150px;
+    }
+}
