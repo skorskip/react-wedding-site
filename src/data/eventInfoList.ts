@@ -82,11 +82,12 @@ export const EventInfoList = [
         id: "registry",
         title: "registry",
         subTitle: "",
-        titleImage: PHOTO_ENUM.ZAKOPANE_PANO,
-        mobileTitleImage: PHOTO_ENUM.ZAKOPANE_SQUARE,
-        subImage: PHOTO_ENUM.ENGAGEMENT_3,
+        titleImage: PHOTO_ENUM.HAWAII_PANO,
+        mobileTitleImage: PHOTO_ENUM.HAWAII_SQUARE,
+        subImage: PHOTO_ENUM.ENGAGEMENT_5,
         button: null,
         content: `
+        <ul>Thank you for visiting our registry. Any gift is greatly appreciated! Can't wait to celebrate with everyone!</ul>
         <div class="content-items">
             <div class="content-item">
                 <a href='https://www.williams-sonoma.com/registry/gts5j6htk7/registry-list.html?cm_Type=gnav'>
@@ -117,54 +118,6 @@ export const EventInfoList = [
                 </a>
             </div>
             </div>`,
-        icon: faGift,
-        buttonLink: null,
-        viewDesktop: true,
-        viewMobile: true
-    },
-    {
-        id: "registry1",
-        title: "registry",
-        subTitle: "",
-        titleImage: PHOTO_ENUM.ZAKOPANE_PANO,
-        mobileTitleImage: PHOTO_ENUM.ZAKOPANE_SQUARE,
-        subImage: PHOTO_ENUM.ENGAGEMENT_3,
-        button: null,
-        content: `
-            <table>
-                <tr style="display:flex; justify-content:space-around;">
-                    <td style="border: none;">
-                        <a href='https://google.com'>
-                            <div class="content-button-image accent-color">
-                                <img src="${williamSonoma}"/>
-                            </div>
-                        </a>
-                    </td>
-                    <td style="border: none;">
-                        <a href='https://google.com'>
-                            <div class="content-button-image accent-color">
-                                <img src="${anthropologie}"/>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-                <tr style="display:flex; justify-content:space-around;">
-                    <td style="border: none;">
-                        <a href='https://google.com'>
-                            <div class="content-button-image accent-color">
-                                <img src="${potteryBarn}"/>
-                            </div>
-                        </a>
-                    </td>
-                    <td style="border: none;">
-                        <a href='https://google.com'>
-                            <div class="content-button-image accent-color">
-                                <img src="${westElm}"/>
-                            </div>
-                        </a>
-                    </td>
-                </tr>
-            </table`,
         icon: faGift,
         buttonLink: null,
         viewDesktop: true,
