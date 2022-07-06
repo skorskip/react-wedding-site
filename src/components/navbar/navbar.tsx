@@ -21,6 +21,9 @@ export const Navbar = () => {
 
     const getSelectedClass = (item: string) => {
         var navClass = "regular-font nav-bar-item primary-color";
+        if(item === 'rsvp') {
+            navClass = "regular-font nav-bar-item accent-background-color nav-special-item"; 
+        }
         if(item === selected) {
             return navClass + " nav-bar-selected"
         }
@@ -54,7 +57,7 @@ export const Navbar = () => {
         )
     });
 
-    const navItem = eventDetails.map((info, i) => {
+    const navItem = eventDetails.map((info) => {
         return (
             <Link 
                 to={`/details?detail=${info.id}`}

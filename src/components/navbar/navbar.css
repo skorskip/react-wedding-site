@@ -68,3 +68,7 @@
     justify-content: flex-end;
 }
 
+.nav-special-item {
+    border-radius: 10px;
+}
+

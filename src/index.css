@@ -48,7 +48,8 @@ code {
 }
 
 .accent-background-color {
-  background: #C1695E !important
+  background: #C1695E !important;
+  color: white !important;
 }
 
 .tiertary-color {
