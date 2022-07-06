@@ -39,15 +39,15 @@ export const Card = ({id, title, content, icon, button, imagePath, buttonLink}: 
 
     const buttonClick = () => {
         if(buttonLink){
-            window.location.href = buttonLink;
+            window.open(buttonLink, '_blank');
         }
     }
 
     const titleCard = (
         <div className="title">
             <span className="icon-text" style={{display:"flex", alignItems:"center",justifyContent:"center"}}>
-                <span className="icon primary-color">
-                    <FontAwesomeIcon icon={icon}/>
+                <span className="icon is-large primary-color">
+                    <FontAwesomeIcon size="lg" icon={icon}/>
                 </span>
                 <span className="card-title-text regular-font primary-color">{title}</span>
             </span>

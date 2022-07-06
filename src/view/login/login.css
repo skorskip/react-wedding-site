@@ -34,8 +34,10 @@
 
 .bubble-container {
     position: fixed;
-    margin-top: -310px;
-    margin-left: 55px;
+    margin-top: -72px;
+    margin-left: 45px;
+    z-index: 2;
+    background: white;
 }
 
 .bubble-subcontent {

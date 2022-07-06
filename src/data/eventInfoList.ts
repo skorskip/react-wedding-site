@@ -1,10 +1,11 @@
 import { EventInfo } from "../models/eventInfo";
-import { faConciergeBell, faGlassCheers, faCalendarDay, faCalendarCheck, faGift } from "@fortawesome/free-solid-svg-icons";
+import { faConciergeBell, faGlassCheers, faCalendarDay, faCalendarCheck, faGift, faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { PHOTO_ENUM } from "./photos";
 import williamSonoma from "../assets/images/logo/william-sonoma.svg";
 import potteryBarn from "../assets/images/logo/pottery-barn.svg";
 import westElm from "../assets/images/logo/west-elm.svg";
 import anthropologie from "../assets/images/logo/anthropologie.svg";
+import bedBathBeyond from "../assets/images/logo/bed-bath-beyond.svg";
 
 export const EventInfoList = [
     {
@@ -90,35 +91,167 @@ export const EventInfoList = [
         <ul>Thank you for visiting our registry. Any gift is greatly appreciated! Can't wait to celebrate with everyone!</ul>
         <div class="content-items">
             <div class="content-item">
-                <a href='https://www.williams-sonoma.com/registry/gts5j6htk7/registry-list.html?cm_Type=gnav'>
+                <a target="_blank" href='https://www.williams-sonoma.com/registry/gts5j6htk7/registry-list.html?cm_Type=gnav'>
                     <div class="content-button-image accent-color">
                         <img src="${williamSonoma}"/>
                     </div>
                 </a>
             </div>
             <div class="content-item">
-                <a href='https://www.anthropologie.com/registry/listing?registryId=63CE915B1E5F#:~:text=https%3A//www.anthropologie.com/registry/listing%3FregistryId%3D63CE915B1E5F'>
+                <a target="_blank" href='https://www.anthropologie.com/registry/listing?registryId=63CE915B1E5F#:~:text=https%3A//www.anthropologie.com/registry/listing%3FregistryId%3D63CE915B1E5F'>
                     <div class="content-button-image accent-color">
                         <img src="${anthropologie}"/>
                     </div>
                 </a>
             </div>
             <div class="content-item">
-                <a href='https://www.potterybarn.com/registry/gts5j6htk7/registry-list.html'>
+                <a target="_blank" href='https://www.potterybarn.com/registry/gts5j6htk7/registry-list.html'>
                     <div class="content-button-image accent-color">
                         <img src="${potteryBarn}"/>
                     </div>
                 </a>
             </div>
             <div class="content-item">
-                <a href='https://www.westelm.com/registry/gts5j6htk7/registry-list.html'>
+                <a target="_blank" href='https://www.westelm.com/registry/gts5j6htk7/registry-list.html'>
                     <div class="content-button-image accent-color">
                         <img src="${westElm}"/>
                     </div>
                 </a>
             </div>
+            <div class="content-item">
+                <a target="_blank" href='https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/551594130'>
+                    <div class="content-button-image accent-color">
+                        <img src="${bedBathBeyond}"/>
+                    </div>
+                </a>
+            </div>
             </div>`,
         icon: faGift,
+        buttonLink: null,
+        viewDesktop: true,
+        viewMobile: true
+    },
+    {
+        id: "faq",
+        title: "faq",
+        subTitle: "",
+        titleImage: PHOTO_ENUM.GLENN_ARBOR_PANO,
+        mobileTitleImage: PHOTO_ENUM.GLENN_ARBOR_SQUARE,
+        subImage: null,
+        button: null,
+        content: `
+            <dl>
+                <dt>
+                    <b>
+                        Where is the wedding?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Our wedding is at the Point at Norwalk Cove in Norwalk, CT. The address to the venue is 48 Calf Pasture Beach Rd. Norwalk, CT 06851.
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        What time should I arrive to the ceremony?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Our wedding ceremony will begin promptly at 5:00 PM. Please arrive by 4:50 to allow time for seating.
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        What is the best way to RSVP?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Please RSVP online using the RSVP form on our website.                
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        When do I RSVP by?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Please RSVP by August 7, 2022.                    
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        How do I get the wedding venue?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Shuttle service will be provided from Hotel Zero Degrees to the wedding venue. The first shuttle will depart the hotel at 4:00 PM and the last shuttle will depart at 4:30 PM. Following the reception, the shuttle will return to the hotel.                     
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        Where do I park?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        You may park in the marina parking lot.                    
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        Can I take pictures during the ceremony?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        We kindly ask you do not take pictures or record anything during the ceremony. We will be having a completely unplugged ceremony.                    
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        Will there be an open bar?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Yes, there will be a full open bar for cocktail hour and the reception.                   
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        When will the reception end?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        The reception will conclude at 11:00 PM.                   
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        Are there hotel room blocks for guests?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Yes, we have reserved a room block at the Hotel Zero Degrees. Please visit the "Hotel" tab for more details.                   
+                    </i>
+                </dd>
+            </dl>`,
+        icon: faQuestionCircle,
         buttonLink: null,
         viewDesktop: true,
         viewMobile: true

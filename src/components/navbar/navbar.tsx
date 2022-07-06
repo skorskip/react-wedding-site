@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./navbar.css"
 import logo from "../../assets/images/logo/puppy.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faConciergeBell, faGlassCheers, faHighlighter, faCalendarCheck, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
+import { EventInfoList } from "../../data/eventInfoList";
+
 
 
 export const Navbar = () => {
@@ -15,6 +17,7 @@ export const Navbar = () => {
     const mobileWidth = 550;
     const [selected, setSelected] = useState(param);
     const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
+    const eventDetails = EventInfoList;
 
     const getSelectedClass = (item: string) => {
         var navClass = "regular-font nav-bar-item primary-color";
@@ -36,58 +39,34 @@ export const Navbar = () => {
         setDisplayMobileMenu(!displayMobileMenu);
     }
 
+    const mobileNavItem = eventDetails.map((info) => {
+        return (
+            <Link 
+                className="panel-block nav-bar-mobile-menu-item primary-color" 
+                to={`/details?detail=${info.id}`}
+                onClick={() => selectItemMobile()}
+            >
+                <span className="icon is-large">
+                    <FontAwesomeIcon icon={info.icon}/>
+                </span>
+                {info.title}
+            </Link>
+        )
+    });
+
+    const navItem = eventDetails.map((info, i) => {
+        return (
+            <Link 
+                to={`/details?detail=${info.id}`}
+                onClick={() => selectItem(info.id)}>
+                <div className={getSelectedClass(info.id)}>{info.title}</div>
+            </Link>
+        )
+    });
+
     const mobileNavMenu = (displayMobileMenu) && (
         <nav className="panel nav-bar-mobile-menu base-background-color">
-            <Link 
-                className="panel-block nav-bar-mobile-menu-item primary-color" 
-                to="/details?detail=rsvp"
-                onClick={() => selectItemMobile()}
-            >
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faCalendarCheck}/>
-                </span>
-                rsvp
-            </Link>
-            <Link 
-                className="panel-block nav-bar-mobile-menu-item primary-color" 
-                to="/details?detail=schedule"
-                onClick={() => selectItemMobile()}
-            >
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faHighlighter}/>
-                </span>
-                schedule
-            </Link>
-            <Link   
-                className="panel-block nav-bar-mobile-menu-item primary-color" 
-                to="/details?detail=venue"
-                onClick={() => selectItemMobile()}
-            >
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faGlassCheers}/>
-                </span>
-                venue
-            </Link>
-            <Link 
-                className="panel-block nav-bar-mobile-menu-item primary-color" 
-                to="/details?detail=hotel"
-                onClick={() => selectItemMobile()}
-            >
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faConciergeBell}/>
-                </span>
-                hotel
-            </Link>
-            <Link 
-                className="panel-block nav-bar-mobile-menu-item primary-color" 
-                to="/details?detail=registry"
-                onClick={() => selectItemMobile()}
-            >
-                <span className="icon is-large">
-                    <FontAwesomeIcon icon={faConciergeBell}/>
-                </span>
-                registry
-            </Link>
+            {mobileNavItem}
         </nav>
     )
 
@@ -98,31 +77,7 @@ export const Navbar = () => {
                     <img src={logo} alt=""/>
                 </span>
             </Link>
-            <Link 
-                to="/details?detail=rsvp" 
-                onClick={() => selectItem('rsvp')}>
-                <div className={getSelectedClass("rsvp")}>rsvp</div>
-            </Link>
-            <Link
-                onClick={() => selectItem('schedule')}
-                to="/details?detail=schedule">
-                <div className={getSelectedClass("schedule")}>schedule</div>
-            </Link>
-            <Link 
-                onClick={() => selectItem('venue')}
-                to="/details?detail=venue">
-                <div className={getSelectedClass("venue")}>venue</div>
-            </Link>
-            <Link
-                onClick={() => selectItem('hotel')}
-                to="/details?detail=hotel">
-                <div className={getSelectedClass("hotel")}>hotel</div>
-            </Link>
-            <Link
-                onClick={() => selectItem('registry')}
-                to="/details?detail=registry">
-                <div className={getSelectedClass("registry")}>registry</div>
-            </Link>
+            {navItem}
         </div>
     );
 

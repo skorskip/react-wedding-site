@@ -1,7 +1,7 @@
-import { Card } from "../../../card/card";
+import { Card } from "../card/card";
 import React, { useState, useEffect } from "react";
-import { Picture } from "../../../picture/picture";
-import { EventInfo } from "../../../../models/eventInfo";
+import { Picture } from "../picture/picture";
+import { EventInfo } from "../../models/eventInfo";
 import './event-detail.css'
 
 type Props = {
