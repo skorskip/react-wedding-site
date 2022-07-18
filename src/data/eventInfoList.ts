@@ -75,7 +75,7 @@ export const EventInfoList = [
                 <li>Or call (203)750-9800 and say you are part of the Gorniak/Skorski wedding.</li>
             </ul>`,
         icon: faConciergeBell,
-        buttonLink: "https://www.bookonthenet.net/east/premium/eresmain.aspx?id=LO8W7KTBFBqJtZAby1hkmmTxmOqeaOn4yjTO6OXz1ew%3d&arrival_date=2022-09-08&stay_nights=2&promo_code=Gorniak-Skorski%20#/rates",
+        buttonLink: "https://www.bookonthenet.net/east/premium/eresmain.aspx?id=LO8W7KTBFBqJtZAby1hkmmTxmOqeaOn4yjTO6OXz1ew%3d&arrival_date=2022-09-09&stay_nights=1&promo_code=Gorniak-Skorski%20#/rates",
         viewDesktop: true,
         viewMobile: true
     },
