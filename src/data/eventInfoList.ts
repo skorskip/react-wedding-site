@@ -34,8 +34,11 @@ export const EventInfoList = [
             <table
                 <tr><td>4:50 PM</td><td>Arrive to venue</td></tr>
                 <tr><td>5:00 PM - 5:30 PM</td><td>Ceremony</td></tr>
-                <tr><td>5:30 PM - 6:30 PM</td><td>Cocktail Hour</td></tr>
-                <tr><td>6:30 PM - 11:00 PM</td><td>Reception</td></tr>
+                <tr><td>5:45 PM - 6:45 PM</td><td>Cocktail Hour</td></tr>
+                <tr><td>7:15 PM - 11:00 PM</td><td>Reception</td></tr>
+                <tr><td>11:00 PM</td><td>After Party at 
+                    <a target="_blank" href='https://www.google.com/maps/place/El+Segundo/@41.0993409,-73.4184628,17z/data=!4m5!3m4!1s0x89e81e870e210bbb:0xbb5ee601947df535!8m2!3d41.0993787!4d-73.4161729'>El Segundo<a>
+                </td></tr>
             <table>`,
         icon: faCalendarDay,
         buttonLink: null,
@@ -54,7 +57,7 @@ export const EventInfoList = [
             <ul>Our wedding ceremony and cocktail hour will be hosted at the Point at Norwalk Cove in Norwalk, CT.</ul>
             <ul>48 Calf Pasture Beach Rd. Norwalk, CT 06855</ul>`,
         icon: faGlassCheers,
-        buttonLink: "https://www.google.com/maps/@41.0837121,-73.3984655,3a,90y,316.55h,93.76t/data=!3m10!1e1!3m8!1sAF1QipMm8bF8l23W_NK4q2xQuy_3ebNepO83_qdfWNNi!2e10!3e12!7i8192!8i4096!9m2!1b1!2i38",
+        buttonLink: "https://www.google.com/maps/place/The+Point+at+Norwalk+Cove/@41.084351,-73.4007902,17z/data=!3m1!4b1!4m5!3m4!1s0x89e81e94cd3b4e8d:0x6b9a7389a4307e81!8m2!3d41.084351!4d-73.3985962",
         viewMobile: true,
         viewDesktop: true
     },
@@ -203,7 +206,7 @@ export const EventInfoList = [
                 </dt>
                 <dd>
                     <i>
-                        You may park in the marina parking lot.                    
+                        You may park in the marina parking lot, and you may park overnight.                    
                     </i>
                 </dd>
                 <br>
@@ -248,6 +251,17 @@ export const EventInfoList = [
                 <dd>
                     <i>
                         Yes, we have reserved a room block at the Hotel Zero Degrees. Please visit the "Hotel" tab for more details.                   
+                    </i>
+                </dd>
+                <br>
+                <dt>
+                    <b>
+                        Will there be an after party?
+                    </b>
+                </dt>
+                <dd>
+                    <i>
+                        Yes, the party will continue at El Segundo, at 3 N Water St, Norwalk, CT 06854.                   
                     </i>
                 </dd>
             </dl>`,
